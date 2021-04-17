@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-shopping-cart',
   templateUrl: './shopping-cart.component.html',
@@ -12,4 +13,14 @@ export class ShoppingCartComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  items = [
+    'MILK',
+    'EGGS',
+    'BREAD'
+  ];
+
+  handleDelete(deletedItem){
+    this.items = this.items.filter( item => item!== deletedItem);
+    
+  }
 }

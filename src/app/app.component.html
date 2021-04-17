@@ -16,7 +16,10 @@
             <a class="nav-link" routerLink="/server">SERVER</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            <a class="nav-link" routerLink="/item-cart" >ITEM CART</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/book-cart" >BOOK CART</a>
           </li>
         </ul>
       </div>
@@ -25,5 +28,6 @@
 
 <button class="btn btn-primary" type="submit" [disabled]= addServer()>ADD SERVER</button>
 
-
-<router-outlet></router-outlet>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>

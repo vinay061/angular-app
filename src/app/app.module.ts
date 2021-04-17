@@ -6,17 +6,23 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { ServerComponent } from './server/server.component';
+import { ItemCartComponent } from './item-cart/item-cart.component';
+import { BookCartComponent } from './book-cart/book-cart.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ShoppingCartComponent,
-    ServerComponent
+    ServerComponent,
+    ItemCartComponent,
+    BookCartComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

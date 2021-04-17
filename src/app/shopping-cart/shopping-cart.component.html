@@ -1,1 +1,14 @@
-<p>shopping-cart works!</p>
+<p>SHOPPING CART COMPONENT</p>
+
+<ul class="list-group list-group-flush">
+    <li  class="list-group-item" *ngFor = 'let item of items'> {{ item }} 
+     <button class="btn btn-danger" [title] = " 'Delete' + ' '+ item" (click)=handleDelete(item)>x</button></li>
+</ul>
+
+<p> Number of items: {{ items.length }}</p>
+
+<div *ngIf = 'items.length > 2'>
+    <app-item-cart [items]="items"></app-item-cart>
+</div>
+
+
