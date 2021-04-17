@@ -6,9 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  name:string ='vinay';
-  serverName = 'Luxembourg-server';
-  serverId = 10;
+  
   newServerName:string = 'no server yet';
   serverAdd:boolean = false;
   addServer(){

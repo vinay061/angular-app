@@ -1,11 +1,29 @@
-<h1>Test Input</h1>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">CultureBooking</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/home">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/shopping-cart">SHOPPING CART</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/server">SERVER</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-<p>{{ name }}</p>
+<button class="btn btn-primary" type="submit" [disabled]= addServer()>ADD SERVER</button>
 
-<p>Server Name is: {{ serverName }}</p>
-<p>Server Id is: {{ serverId }}</p>
 
-<button type="submit" [disabled]= addServer()>ADD SERVER</button>
-
-<button (click)=createNewServer()>CLICK § CREATE NEW SERVER</button>
-<p>{{ newServerName }}</p>
+<router-outlet></router-outlet>
