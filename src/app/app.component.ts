@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'application-server';
+  name:string ='vinay';
+  serverName = 'Luxembourg-server';
+  serverId = 10;
+  newServerName:string = 'no server yet';
+  serverAdd:boolean = false;
+  addServer(){
+    setTimeout(() => {
+      this.serverAdd = true;
+    },5000)
+  }
+
+  createNewServer(){
+    this.newServerName = 'server-created';
+  }
 }
