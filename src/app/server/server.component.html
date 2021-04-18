@@ -1,5 +1,39 @@
 <p>SERVER COMPONENT</p>
+<div class="shadow-lg p-3 mb-5 bg-body rounded">
+    <button class="btn btn-info" (click)=handleClick()>CREATE NEW SERVER</button>
+</div>
 
-<button class="btn btn-info" (click)=handleClick()>CREATE NEW SERVER</button>
+<div class="shadow-lg w-25 p-3 mb-5 bg-body rounded">
+    {{ serverStatus }}
+</div>
 
-{{ serverStatus }}
+<div *ngIf="serverNames.length > 5; then serverList else emptyServer"></div>
+<ng-template #serverList>
+    <ul>
+        <li *ngFor='let server of serverNames'>{{server}}</li>
+    </ul>
+</ng-template>
+
+<ng-template #emptyServer>
+    <div>
+        No server available
+
+    </div>
+</ng-template>
+
+
+<div class="container">
+    <span class="badge bg-success" [class.active]="viewmode == 'eu' "><a (click)="viewmode = 'eu' ">EUROPE SERVER</a></span>
+    <span class="badge bg-info" [class.active]="viewmode == 'as' "><a (click)="viewmode = 'as' ">ASIA SERVER</a></span>
+</div>
+
+<div [ngSwitch]="viewmode">
+    <ul class="list-group" *ngSwitchCase="'eu'">
+        <li class="list-group-item" *ngFor='let euServer of euroServers'>{{euServer}}</li>
+    </ul>
+    <ul *ngSwitchCase="'as'">
+        <li class="list-group-item" *ngFor='let asServer of asiaServers'>{{asServer}}</li>
+    </ul>
+    <ul *ngSwitchDefault>SERVERS NOT LOADED</ul>
+</div>
+

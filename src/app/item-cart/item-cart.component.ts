@@ -11,7 +11,12 @@ export class ItemCartComponent implements OnInit {
   
 @Input() items;
 
-
+itembag = [
+  "Laptop",
+  "Keyboard",
+  "Mouse",
+  "Charger"
+];
 
 
   ngOnInit(): void {
